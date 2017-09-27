@@ -1,0 +1,76 @@
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet">
+
+<h1>
+  {{title}}
+</h1>
+
+<div id="board" >
+<table class="table">    
+  <div *ngFor="let row of new">
+    <tr>    
+      <th *ngFor= "let square of row">
+
+          <div *ngIf="square.type[0] == 'p'">
+              {{square.type[1]}}
+              <svg width="12" height="25">
+                  <rect width="12" height="25" style="fill:coral;stroke-width:1;stroke:blue" />
+                </svg>
+                  
+            </div>
+
+            <div *ngIf="square.type == 'B' ">
+                <svg width="25" height="25">
+                  <rect x="10" y="10" width="25" height="25"/>
+                </svg>
+            </div>
+
+            <div *ngIf="square.type == 'p' ">
+                <svg width="12" height="25">
+                    <rect width="12" height="25" style="fill:black;stroke-width:1;stroke:white" />
+                  </svg>
+            </div>
+
+            <div *ngIf="square.type == 'P' ">
+                  <svg width="25" height="25">
+                      <rect x="10" y="10" width="25" height="25" style="fill:coral;stroke-width:1;stroke:black"/>
+                    </svg>
+            </div>
+
+
+            <div *ngIf="square.type == 'H' ">
+                <svg width="25" height="25">
+                    <rect x="10" y="10" width="25" height="25" style="fill:darkgrey;stroke-width:2;stroke:red"/>
+                  </svg>
+            </div>
+
+            <div *ngIf="square.type == '_' ">
+                <svg width="25" height="25">
+                    <rect x="10" y="10"width="10" height="10"
+                    style="fill:white;stroke:white;stroke-width:5;opacity:0.5" />
+                  </svg>
+            </div>
+
+            <div *ngIf="square.type[1] == 'b' ">
+              {{square.type[2]}}
+                <svg width="12" height="25">
+                    <rect width="12" height="25" style="fill:white;stroke-width:1;stroke:blue" />
+                  </svg>
+            </div>
+
+           <div *ngIf="square.type != '_' && square.type != 'H' && square.type != 'B' &&
+           square.type[0] != 'p' && square.type != 'p' && square.type[1] != 'b' && square.type != 'P'">
+              {{square.type}}
+                <svg width="12" height="25">
+                    <rect width="12" height="25" style="fill:white;stroke-width:1;stroke:grey" />
+                </svg>
+                  
+            </div>
+
+      </th>
+    </tr>
+   
+  </div>
+  
+</table>
+</div>
+
